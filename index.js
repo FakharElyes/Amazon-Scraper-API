@@ -4,12 +4,9 @@ const request = require('request-promise');
 const PORT = process.env.PORT || 5000;
 const app = express();
 
-const apiKey ='397813b00094e4d98bda3351c5787158';
-const bseUrl = `http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`;
-
 app.use(express.json())
 
-
+const returnScraperApiUrl = (apiKey) => `http://api.scraperapi.com?api_key=${apiKey}&autoparse=true`;
 
 // Welcome route
 app.get('/', async (req, res) => {
